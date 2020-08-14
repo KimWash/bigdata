@@ -1,22 +1,42 @@
-var servicekey = "b03fc9ace2d2464fa59f"
-var secretkey = "697d6f6b83fc407e82a3"
-var token
+var servicekey = "b03fc9ace2d2464fa59f";
+var secretkey = "697d6f6b83fc407e82a3";
+var token;
 
-var settings = {
-    "url": "https://sgisapi.kostat.go.kr/OpenAPI3/auth/authentication.json",
+function auth(){
+  $.ajax({
+    type: "get",
+    url: "https://sgisapi.kostat.go.kr/OpenAPI3/auth/authentication.json",
+    async: false,
+    data: {
+      "consumer_key": servicekey,
+      "consumer_secret": secretkey
+    },
+    success: function (data){
+      token = data.result.accessToken;
+    }
+  });
+  return token
+}
+
+function get_population(gotToken){
+  console.log(gotToken)
+
+  var settings_population = {
+    "url": "https://sgisapi.kostat.go.kr/OpenAPI3/stats/searchpopulation.json",
     "method": "GET",
     "timeout": 0,
     "headers": {
       "Content-Type": "application/x-www-form-urlencoded",
-      "Cookie": "ipmsperf_uuid=2421812593300066160; JSESSIONID=b7jr7XwrLVaUiKBQc1EBIhiHbTGMcA6WBAIHqcZQCJvoD8hMVmNyDgugLEudUhfp.sgis_was1_servlet_engine2"
     },
     "data": {
-      "consumer_key": servicekey,
-      "consumer_secret": secretkey
+      "accessToken": gotToken,
+      "year": "2018"
     }
-  };
+  }
   
-  $.ajax(settings).done(function (response) {
+  $.ajax(settings_population).done(function (response) {
     console.log(response);
-    token = response
   });
+}
+
+get_population(auth())
