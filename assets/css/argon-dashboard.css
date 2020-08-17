@@ -48,7 +48,7 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: Open Sans, sans-serif;
+  --font-family-sans-serif: 'Noto Sans KR', sans-serif;
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
@@ -59,7 +59,7 @@
 }
 
 html {
-  font-family: sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -86,7 +86,7 @@ section {
 
 body {
   margin: 0;
-  font-family: Open Sans, sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -6245,7 +6245,7 @@ button.close {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: Open Sans, sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -6370,7 +6370,7 @@ button.close {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: Open Sans, sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
